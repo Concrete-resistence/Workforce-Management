@@ -147,6 +147,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -154,6 +155,10 @@
     <Compile Include="Migrations\201710170037412_First.cs" />
     <Compile Include="Migrations\201710170037412_First.Designer.cs">
       <DependentUpon>201710170037412_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710180103146_renamedepartmentid.cs" />
+    <Compile Include="Migrations\201710180103146_renamedepartmentid.Designer.cs">
+      <DependentUpon>201710180103146_renamedepartmentid.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Computer.cs" />
@@ -200,6 +205,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Delete.cshtml" />
+    <Content Include="Views\Departments\Details.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -222,6 +232,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710170037412_First.resx">
       <DependentUpon>201710170037412_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710180103146_renamedepartmentid.resx">
+      <DependentUpon>201710180103146_renamedepartmentid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

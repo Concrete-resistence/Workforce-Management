@@ -5,10 +5,10 @@ using System.Web;
 
 namespace Workforce_Management.Models
 {
-    public class Departement
+    public class Department
     {
-        public int DepartementId { get; set; }
-        public int DepartmentName { get; set; }
+        public int DepartmentId { get; set; }
+        public string DepartmentName { get; set; }
         public virtual List<Employee> EmployeeId { get; set; }
     }
 }
