@@ -160,6 +160,14 @@
     <Compile Include="Migrations\201710180103146_renamedepartmentid.Designer.cs">
       <DependentUpon>201710180103146_renamedepartmentid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710180152293_addeddepartmentdeatails.cs" />
+    <Compile Include="Migrations\201710180152293_addeddepartmentdeatails.Designer.cs">
+      <DependentUpon>201710180152293_addeddepartmentdeatails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710180155003_add-migration fixed spelling.cs" />
+    <Compile Include="Migrations\201710180155003_add-migration fixed spelling.Designer.cs">
+      <DependentUpon>201710180155003_add-migration fixed spelling.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\Departement.cs" />
@@ -235,6 +243,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710180103146_renamedepartmentid.resx">
       <DependentUpon>201710180103146_renamedepartmentid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710180152293_addeddepartmentdeatails.resx">
+      <DependentUpon>201710180152293_addeddepartmentdeatails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710180155003_add-migration fixed spelling.resx">
+      <DependentUpon>201710180155003_add-migration fixed spelling.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
