@@ -46,7 +46,7 @@ namespace Workforce_Management.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DepartmentId,DepartmentName")] Department department)
+        public ActionResult Create([Bind(Include = "DepartmentId,DepartmentName,DepartmentDetails")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Workforce_Management.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DepartmentId,DepartmentName")] Department department)
+        public ActionResult Edit([Bind(Include = "DepartmentId,DepartmentName,DepartmentDetails")] Department department)
         {
             if (ModelState.IsValid)
             {

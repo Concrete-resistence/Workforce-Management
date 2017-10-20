@@ -168,6 +168,14 @@
     <Compile Include="Migrations\201710180155003_add-migration fixed spelling.Designer.cs">
       <DependentUpon>201710180155003_add-migration fixed spelling.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710200016386_fuckVS.cs" />
+    <Compile Include="Migrations\201710200016386_fuckVS.Designer.cs">
+      <DependentUpon>201710200016386_fuckVS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710200034587_addedstuff.cs" />
+    <Compile Include="Migrations\201710200034587_addedstuff.Designer.cs">
+      <DependentUpon>201710200034587_addedstuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\Departement.cs" />
@@ -249,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710180155003_add-migration fixed spelling.resx">
       <DependentUpon>201710180155003_add-migration fixed spelling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710200016386_fuckVS.resx">
+      <DependentUpon>201710200016386_fuckVS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710200034587_addedstuff.resx">
+      <DependentUpon>201710200034587_addedstuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
