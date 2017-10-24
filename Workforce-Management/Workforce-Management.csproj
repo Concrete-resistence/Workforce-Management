@@ -161,6 +161,10 @@
     <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.Designer.cs">
       <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710240224045_DateTimeFixAttempt1.cs" />
+    <Compile Include="Migrations\201710240224045_DateTimeFixAttempt1.Designer.cs">
+      <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\Departement.cs" />
@@ -233,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710200108480_AddingToTrainingPrograms.resx">
       <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710240224045_DateTimeFixAttempt1.resx">
+      <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
