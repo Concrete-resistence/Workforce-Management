@@ -14,6 +14,5 @@ namespace Workforce_Management.Models
         public virtual int ComputerId { get; set; }
         public virtual int DepartementId { get; set; }
         public virtual List<TrainingProgram> TrainingPrograms { get; set;}
-
     }
 }

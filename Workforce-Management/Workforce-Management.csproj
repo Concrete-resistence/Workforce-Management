@@ -147,13 +147,23 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrainingProgramsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201710170037412_First.cs" />
     <Compile Include="Migrations\201710170037412_First.Designer.cs">
       <DependentUpon>201710170037412_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710170207382_changeDepartementIdToString.cs" />
+    <Compile Include="Migrations\201710170207382_changeDepartementIdToString.Designer.cs">
+      <DependentUpon>201710170207382_changeDepartementIdToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710180102448_ChangeDepartmentTypo.cs" />
+    <Compile Include="Migrations\201710180102448_ChangeDepartmentTypo.Designer.cs">
+      <DependentUpon>201710180102448_ChangeDepartmentTypo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Computer.cs" />
@@ -162,6 +172,7 @@
     <Compile Include="Models\TrainingProgram.cs" />
     <Compile Include="Models\WorkforceManagmentContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EmployeeView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -200,6 +211,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\TrainingPrograms\Create.cshtml" />
+    <Content Include="Views\TrainingPrograms\Delete.cshtml" />
+    <Content Include="Views\TrainingPrograms\Details.cshtml" />
+    <Content Include="Views\TrainingPrograms\Edit.cshtml" />
+    <Content Include="Views\TrainingPrograms\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -222,6 +243,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710170037412_First.resx">
       <DependentUpon>201710170037412_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710170207382_changeDepartementIdToString.resx">
+      <DependentUpon>201710170207382_changeDepartementIdToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710180102448_ChangeDepartmentTypo.resx">
+      <DependentUpon>201710180102448_ChangeDepartmentTypo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
