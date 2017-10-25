@@ -78,7 +78,7 @@ namespace Workforce_Management.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TrainingProgramId,TrainingProgramName")] TrainingProgram trainingProgram)
+        public ActionResult Edit([Bind(Include = "TrainingProgramId,TrainingProgramName,Description,StartDate,EndDate,MaxAttendees")] TrainingProgram trainingProgram)
         {
             if (ModelState.IsValid)
             {

@@ -32,11 +32,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.TrainingProgramName)
                 </td>
-                @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TrainingProgramId }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.TrainingProgramId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TrainingProgramId })*@
+                </td>
             </tr>
         }
 
