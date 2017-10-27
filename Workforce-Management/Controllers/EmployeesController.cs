@@ -72,19 +72,9 @@ namespace Workforce_Management.Controllers
             {
                 return HttpNotFound();
             }
-
-            //EmployeeView viewModel = new EmployeeView();
-            
-            //return View (viewModel);
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
-
             return View(employee);
         }
-
-        //public void DisplayCources()
-        //{
-        //    var AvailableCourses = db.TrainingProgram.ToList();
-        //}
 
         // POST: Employees/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -99,7 +89,34 @@ namespace Workforce_Management.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AvailableCourses = db.TrainingProgram.ToList();
+            //UpdateEmployeeCourses (Employee.TrainingProgram);
             return View(employee);
+        }
+
+    
+        public ActionResult AddCourse(int courseId , int empId)
+        {
+            ViewBag.AvailableCourses = db.TrainingProgram.ToList();
+            var trainingCourse = from C in db.TrainingProgram
+                                 where C.TrainingProgramId == courseId
+                                 select C;
+            db.Employee.Find(empId).TrainingPrograms.Add(trainingCourse.First());
+            db.SaveChanges();
+            Employee employee = db.Employee.Find(empId);
+            return View("Edit", employee);
+        }
+
+        public ActionResult RemoveCourse(int courseId ,int empId)
+        {
+            ViewBag.AvailableCourses = db.TrainingProgram.ToList();
+            var trainingCourse = from C in db.TrainingProgram
+                                 where C.TrainingProgramId == courseId
+                                 select C;
+            db.Employee.Find(empId).TrainingPrograms.Remove(trainingCourse.First());
+            db.SaveChanges();
+            Employee employee = db.Employee.Find(empId);
+            return View("Edit", employee);
         }
 
         // GET: Employees/Delete/5

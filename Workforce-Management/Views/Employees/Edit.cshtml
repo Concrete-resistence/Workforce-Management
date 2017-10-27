@@ -17,7 +17,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.EmployeeId)
-        <h1> sany</h1>
+
         <div class="form-group">
             @Html.LabelFor(model => model.EmployeeFirstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -59,52 +59,32 @@
             </div>
         </div>
 
-------------------------------------------------------
-        @*<div class="form-group">
-            <ul>
-                @foreach (var course  in AvailableCourses)
-                {
-                    <li> @course.TrainingProgramName</li>
-                }
-            </ul>
-        </div>*@
----------------------------------------------------------------
             <table class="table">
                 <tr>
                     <th>
                         Training Program
                     </th>
-                    <th></th>
                 </tr>
-                @foreach (TrainingProgram item in ViewBag.AvailableCourses)
+                @foreach (TrainingProgram item in ViewBag.AvailableCourses )
                 {
                     <tr>
                         <td>
-
                             @item.TrainingProgramName
 
+                            <td>
                            @if (item.Employee.Any(e => e.EmployeeId == Model.EmployeeId))
-                            {
-                                @Html.ActionLink("Delete", "Delete", new { id = item.TrainingProgramId })
-                            }
-                            else
-                            {
-                                 @Html.ActionLink("Add", "Add", new { id = item.TrainingProgramId })
-                            }
-                            
-                        </td>
-                        <td>
-                            
-                            
-
-                        </td>
+                                {
+                                    @Html.ActionLink("Remove", "RemoveCourse", new { courseId = item.TrainingProgramId , empId = Model.EmployeeId })
+                                }
+                          
+                           else 
+                                {
+                                     @Html.ActionLink("Add", "AddCourse", new  { courseId = item.TrainingProgramId , empId = Model.EmployeeId })
+                                }
+                           </td>
                     </tr>
                 }
-
             </table>
--------------------------------------------------------------------
-        
--------------------------------------------------------------------
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
