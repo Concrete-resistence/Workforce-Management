@@ -16,6 +16,7 @@ namespace Workforce_Management.Models
         [DataType(DataType.Date)]
         [Display(Name ="Purchase Date")]
         public DateTime PurchaseDate { get; set; }
+        public bool Avaliable { get; set; }
         public virtual List<Employee> Employee { get; set; }
     }
 }
