@@ -214,6 +214,7 @@
     <Content Include="Views\TrainingPrograms\Create.cshtml" />
     <Content Include="Views\TrainingPrograms\Edit.cshtml" />
     <Content Include="Views\TrainingPrograms\Delete.cshtml" />
+    <Content Include="Views\TrainingPrograms\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
