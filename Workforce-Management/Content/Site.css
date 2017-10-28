@@ -23,4 +23,6 @@ textarea {
     max-width: 280px;
 }
 
-
+h1 h2 {
+    background-color: whitesmoke;
+}
