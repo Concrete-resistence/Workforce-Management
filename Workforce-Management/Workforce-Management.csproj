@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -149,12 +150,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComputersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TrainingProgramsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.cs" />
     <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.Designer.cs">
       <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.cs" />
+    <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.Designer.cs">
+      <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710240224045_DateTimeFixAttempt1.cs" />
+    <Compile Include="Migrations\201710240224045_DateTimeFixAttempt1.Designer.cs">
+      <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Computer.cs" />
@@ -203,6 +213,11 @@
     <Content Include="Views\Computers\Details.cshtml" />
     <Content Include="Views\Computers\Edit.cshtml" />
     <Content Include="Views\Computers\Index.cshtml" />
+    <Content Include="Views\TrainingPrograms\Index.cshtml" />
+    <Content Include="Views\TrainingPrograms\Create.cshtml" />
+    <Content Include="Views\TrainingPrograms\Edit.cshtml" />
+    <Content Include="Views\TrainingPrograms\Delete.cshtml" />
+    <Content Include="Views\TrainingPrograms\Details.cshtml" />
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
     <Content Include="Views\Employees\Details.cshtml" />
@@ -235,6 +250,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710270047325_addedBoolForAvaliable.resx">
       <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710200108480_AddingToTrainingPrograms.resx">
+      <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710240224045_DateTimeFixAttempt1.resx">
+      <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
