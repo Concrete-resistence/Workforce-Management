@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Workforce_Management.Models;
-using Workforce_Management.ViewModels;
 
 namespace Workforce_Management.Controllers
 {
@@ -73,6 +69,9 @@ namespace Workforce_Management.Controllers
                 return HttpNotFound();
             }
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
+            ViewBag.AvailableComputers = db.Computer
+                .Where(x => x.Available == true)
+                .ToList();
             return View(employee);
         }
 
@@ -85,16 +84,17 @@ namespace Workforce_Management.Controllers
         {
             if (ModelState.IsValid)
             {
+                //var oldComputerId = db.Employee.Find(employee.EmployeeId).ComputerId;
+                //db.Computer.Find(oldComputerId).Available = true;
                 db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
-            //UpdateEmployeeCourses (Employee.TrainingProgram);
+            ViewBag.AvailableComputers = db.Computer.ToList();
             return View(employee);
         }
 
-    
         public ActionResult AddCourse(int courseId , int empId)
         {
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
