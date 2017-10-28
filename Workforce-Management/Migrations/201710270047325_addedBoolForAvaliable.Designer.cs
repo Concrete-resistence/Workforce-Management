@@ -7,13 +7,13 @@ namespace Workforce_Management.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class First : IMigrationMetadata
+    public sealed partial class addedBoolForAvaliable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(First));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addedBoolForAvaliable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710170037412_First"; }
+            get { return "201710270047325_addedBoolForAvaliable"; }
         }
         
         string IMigrationMetadata.Source
