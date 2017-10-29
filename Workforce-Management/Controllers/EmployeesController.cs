@@ -69,11 +69,13 @@ namespace Workforce_Management.Controllers
                 return HttpNotFound();
             }
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
+            ViewBag.AvailableDepartements = db.Departement.ToList();
             ViewBag.AvailableComputers = db.Computer
-                .Where(x => x.Available == true)
+                .Where(C => C.Avaliable == true)
                 .ToList();
-            return View(employee);
+            return View(employee); 
         }
+
 
         // POST: Employees/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -84,18 +86,22 @@ namespace Workforce_Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var oldComputerId = db.Employee.Find(employee.EmployeeId).ComputerId;
-                //db.Computer.Find(oldComputerId).Available = true;
+                //var oldcomputerid = db.Employee.Find(employee.employeeId).computerid;
+                //db.Computer.Find(oldcomputerid).available = true;
                 db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
-            ViewBag.AvailableComputers = db.Computer.ToList();
+            ViewBag.AvailableDepartements = db.Departement.ToList();
+            ViewBag.AvailableComputers = db.Computer
+                            .Where(C => C.Avaliable == true)
+                            .ToList();
             return View(employee);
         }
 
-        public ActionResult AddCourse(int courseId , int empId)
+        
+        public ActionResult AddCourse(int courseId, int empId)
         {
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
             var trainingCourse = from C in db.TrainingProgram
@@ -104,20 +110,33 @@ namespace Workforce_Management.Controllers
             db.Employee.Find(empId).TrainingPrograms.Add(trainingCourse.First());
             db.SaveChanges();
             Employee employee = db.Employee.Find(empId);
+            ViewBag.AvailableComputers = db.Computer.ToList();
+            ViewBag.AvailableDepartements = db.Departement.ToList();
+
+            ViewBag.AvailableComputers = db.Computer
+                           .Where(C => C.Avaliable == true)
+                           .ToList();
             return View("Edit", employee);
         }
 
-        public ActionResult RemoveCourse(int courseId ,int empId)
+
+        public ActionResult Removecourse(int courseid, int empid)
         {
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
-            var trainingCourse = from C in db.TrainingProgram
-                                 where C.TrainingProgramId == courseId
-                                 select C;
-            db.Employee.Find(empId).TrainingPrograms.Remove(trainingCourse.First());
+            var TrainingCourse = from c in db.TrainingProgram
+                                 where c.TrainingProgramId == courseid
+                                 select c;
+            db.Employee.Find(empid).TrainingPrograms.Remove(TrainingCourse.First());
+
             db.SaveChanges();
-            Employee employee = db.Employee.Find(empId);
-            return View("Edit", employee);
+            Employee employee = db.Employee.Find(empid);
+            ViewBag.AvailableDepartements = db.Departement.ToList();
+            ViewBag.AvailableComputers = db.Computer
+                           .Where(C => C.Avaliable == true)
+                           .ToList();
+            return View("edit", employee);
         }
+
 
         // GET: Employees/Delete/5
         public ActionResult Delete(int? id)

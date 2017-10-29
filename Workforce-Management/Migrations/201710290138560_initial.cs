@@ -3,7 +3,7 @@ namespace Workforce_Management.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class First : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -13,6 +13,9 @@ namespace Workforce_Management.Migrations
                     {
                         ComputerId = c.Int(nullable: false, identity: true),
                         ComputerName = c.String(),
+                        ComputerManufacturer = c.String(),
+                        PurchaseDate = c.DateTime(nullable: false),
+                        Avaliable = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ComputerId);
             
@@ -39,6 +42,10 @@ namespace Workforce_Management.Migrations
                     {
                         TrainingProgramId = c.Int(nullable: false, identity: true),
                         TrainingProgramName = c.String(),
+                        Description = c.String(),
+                        StartDate = c.DateTime(),
+                        EndDate = c.DateTime(),
+                        MaxAttendees = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.TrainingProgramId);
             
@@ -47,7 +54,7 @@ namespace Workforce_Management.Migrations
                 c => new
                     {
                         DepartementId = c.Int(nullable: false, identity: true),
-                        DepartmentName = c.Int(nullable: false),
+                        DepartementName = c.String(),
                     })
                 .PrimaryKey(t => t.DepartementId);
             

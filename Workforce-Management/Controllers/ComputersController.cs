@@ -10,107 +10,107 @@ using Workforce_Management.Models;
 
 namespace Workforce_Management.Controllers
 {
-    public class TrainingProgramsController : Controller
+    public class ComputersController : Controller
     {
         private WorkforceManagement db = new WorkforceManagement();
 
-        // GET: TrainingPrograms
+        // GET: Computers
         public ActionResult Index()
         {
-            return View(db.TrainingProgram.ToList());
+            return View(db.Computer.ToList());
         }
 
-        // GET: TrainingPrograms/Details/5
+        // GET: Computers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TrainingProgram trainingProgram = db.TrainingProgram.Find(id);
-            if (trainingProgram == null)
+            Computer computer = db.Computer.Find(id);
+            if (computer == null)
             {
                 return HttpNotFound();
             }
-            return View(trainingProgram);
+            return View(computer);
         }
 
-        // GET: TrainingPrograms/Create
+        // GET: Computers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: TrainingPrograms/Create
+        // POST: Computers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TrainingProgramId,TrainingProgramName,Description,StartDate,EndDate,MaxAttendees")] TrainingProgram trainingProgram)
+        public ActionResult Create([Bind(Include = "ComputerId,ComputerName,ComputerManufacturer,PurchaseDate,Avaliable")] Computer computer)
         {
             if (ModelState.IsValid)
             {
-                db.TrainingProgram.Add(trainingProgram);
+                db.Computer.Add(computer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(trainingProgram);
+            return View(computer);
         }
 
-        // GET: TrainingPrograms/Edit/5
+        // GET: Computers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TrainingProgram trainingProgram = db.TrainingProgram.Find(id);
-            if (trainingProgram == null)
+            Computer computer = db.Computer.Find(id);
+            if (computer == null)
             {
                 return HttpNotFound();
             }
-            return View(trainingProgram);
+            return View(computer);
         }
 
-        // POST: TrainingPrograms/Edit/5
+        // POST: Computers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TrainingProgramId,TrainingProgramName,Description,StartDate,EndDate,MaxAttendees")] TrainingProgram trainingProgram)
+        public ActionResult Edit([Bind(Include = "ComputerId,ComputerName,ComputerManufacturer,PurchaseDate,Avaliable")] Computer computer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(trainingProgram).State = EntityState.Modified;
+                db.Entry(computer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(trainingProgram);
+            return View(computer);
         }
 
-        // GET: TrainingPrograms/Delete/5
+        // GET: Computers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TrainingProgram trainingProgram = db.TrainingProgram.Find(id);
-            if (trainingProgram == null)
+            Computer computer = db.Computer.Find(id);
+            if (computer == null)
             {
                 return HttpNotFound();
             }
-            return View(trainingProgram);
+            return View(computer);
         }
 
-        // POST: TrainingPrograms/Delete/5
+        // POST: Computers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TrainingProgram trainingProgram = db.TrainingProgram.Find(id);
-            db.TrainingProgram.Remove(trainingProgram);
+            Computer computer = db.Computer.Find(id);
+            db.Computer.Remove(computer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
