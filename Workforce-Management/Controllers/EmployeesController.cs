@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Workforce_Management.Models;
+using System.Data.Entity;
 
 namespace Workforce_Management.Controllers
 {
@@ -86,17 +87,26 @@ namespace Workforce_Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var oldcomputerid = db.Employee.Find(employee.employeeId).computerid;
-                //db.Computer.Find(oldcomputerid).available = true;
-                db.Entry(employee).State = EntityState.Modified;
+                var staleEmployee = db.Employee.Find(employee.EmployeeId);
+                if (staleEmployee.ComputerId != employee.ComputerId)
+                {
+                    db.Computer.Find(staleEmployee.ComputerId).Avaliable = true;
+                    db.Computer.Find(employee.ComputerId).Avaliable = false;
+                }
+
+                staleEmployee.ComputerId = employee.ComputerId;
+                staleEmployee.DepartementId = employee.DepartementId;
+                staleEmployee.EmployeeFirstName = employee.EmployeeFirstName;
+                staleEmployee.EmployeeLastName = employee.EmployeeLastName;
+                staleEmployee.HiringDate = employee.HiringDate;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            //(new System.Collections.Generic.Mscorlib_CollectionDebugView<Workforce_Management.Models.Employee>(db.Employee.Local).Items[0]).ComputerId
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
             ViewBag.AvailableDepartements = db.Departement.ToList();
             ViewBag.AvailableComputers = db.Computer
-                            .Where(C => C.Avaliable == true)
-                            .ToList();
+                                        .Where(C => C.Avaliable == true).ToList();
             return View(employee);
         }
 
@@ -114,8 +124,7 @@ namespace Workforce_Management.Controllers
             ViewBag.AvailableDepartements = db.Departement.ToList();
 
             ViewBag.AvailableComputers = db.Computer
-                           .Where(C => C.Avaliable == true)
-                           .ToList();
+                                        .Where(C => C.Avaliable == true).ToList();
             return View("Edit", employee);
         }
 
@@ -132,8 +141,7 @@ namespace Workforce_Management.Controllers
             Employee employee = db.Employee.Find(empid);
             ViewBag.AvailableDepartements = db.Departement.ToList();
             ViewBag.AvailableComputers = db.Computer
-                           .Where(C => C.Avaliable == true)
-                           .ToList();
+                           .Where(C => C.Avaliable == true).ToList();
             return View("edit", employee);
         }
 
