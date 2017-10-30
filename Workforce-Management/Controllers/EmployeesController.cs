@@ -122,7 +122,6 @@ namespace Workforce_Management.Controllers
             Employee employee = db.Employee.Find(empId);
             ViewBag.AvailableComputers = db.Computer.ToList();
             ViewBag.AvailableDepartements = db.Departement.ToList();
-
             ViewBag.AvailableComputers = db.Computer
                                         .Where(C => C.Avaliable == true).ToList();
             return View("Edit", employee);
