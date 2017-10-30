@@ -218,6 +218,7 @@
     <Content Include="Views\Computers\Details.cshtml" />
     <Content Include="Views\Computers\Edit.cshtml" />
     <Content Include="Views\Computers\Index.cshtml" />
+    <Content Include="Views\Shared\HomeView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
