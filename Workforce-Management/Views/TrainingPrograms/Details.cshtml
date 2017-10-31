@@ -4,10 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Training Program Details</h2>
 
 <div>
-    <h4>TrainingProgram</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -48,6 +47,30 @@
 
         <dd>
             @Html.DisplayFor(model => model.MaxAttendees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee)
+        </dt>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>
+                        First Name
+                    </th>
+                </tr>
+
+                @foreach (var item in Model.Employee)
+                {
+                    <tr>
+                        <td>
+                            @item.EmployeeFirstName
+                        </td>
+                    </tr>
+                }
+
+            </table>
         </dd>
 
     </dl>

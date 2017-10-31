@@ -4928,13 +4928,15 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-  padding: 30px;
-  margin-bottom: 30px;
-  font-size: 21px;
-  font-weight: 200;
-  line-height: 2.1428571435;
-  color: inherit;
-  background-color: #eeeeee;
+    padding: 30px;
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: black;
+    background-image: url("http://www.blogto.com/upload/2011/09/2011922-control-room-cbc-f1257_s1057_it2096.jpg");
+    background-color: gray;
+    margin-top: 20px;
 }
 
 .jumbotron h1 {

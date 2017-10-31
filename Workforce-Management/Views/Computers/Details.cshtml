@@ -34,17 +34,10 @@
             @Html.DisplayFor(model => model.PurchaseDate)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Avaliable)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Avaliable)
-        </dd>
-
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ComputerId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ComputerId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
