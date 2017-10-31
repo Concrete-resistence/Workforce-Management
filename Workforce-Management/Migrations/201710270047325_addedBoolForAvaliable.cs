@@ -3,7 +3,7 @@ namespace Workforce_Management.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class First : DbMigration
+    public partial class addedBoolForAvaliable : DbMigration
     {
         public override void Up()
         {
@@ -13,6 +13,9 @@ namespace Workforce_Management.Migrations
                     {
                         ComputerId = c.Int(nullable: false, identity: true),
                         ComputerName = c.String(),
+                        ComputerManufacturer = c.String(),
+                        PurchaseDate = c.DateTime(nullable: false),
+                        Avaliable = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ComputerId);
             
