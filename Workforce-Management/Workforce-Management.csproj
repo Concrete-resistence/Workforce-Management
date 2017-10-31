@@ -168,8 +168,19 @@
     <Compile Include="Migrations\201710302319385_ChangeEmployee3.Designer.cs">
       <DependentUpon>201710302319385_ChangeEmployee3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710302351094_ChangeTables.cs" />
+    <Compile Include="Migrations\201710302351094_ChangeTables.Designer.cs">
+      <DependentUpon>201710302351094_ChangeTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710310001353_ChangeDepartmentTable.cs" />
+    <Compile Include="Migrations\201710310001353_ChangeDepartmentTable.Designer.cs">
+      <DependentUpon>201710310001353_ChangeDepartmentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Computer.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\TrainingProgram.cs" />
     <Compile Include="Models\WorkforceManagmentContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -248,6 +259,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710302319385_ChangeEmployee3.resx">
       <DependentUpon>201710302319385_ChangeEmployee3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710302351094_ChangeTables.resx">
+      <DependentUpon>201710302351094_ChangeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710310001353_ChangeDepartmentTable.resx">
+      <DependentUpon>201710310001353_ChangeDepartmentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

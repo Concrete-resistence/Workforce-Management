@@ -95,7 +95,7 @@ namespace Workforce_Management.Controllers
                 }
 
                 staleEmployee.ComputerId = employee.ComputerId;
-                staleEmployee.DepartementId = employee.DepartementId;
+                staleEmployee.DepartmentId = employee.DepartmentId;
                 staleEmployee.EmployeeFirstName = employee.EmployeeFirstName;
                 staleEmployee.EmployeeLastName = employee.EmployeeLastName;
                 staleEmployee.HiringDate = employee.HiringDate;

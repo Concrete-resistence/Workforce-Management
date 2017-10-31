@@ -17,7 +17,7 @@ namespace Workforce_Management.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime HiringDate { get; set; }
         public virtual int ComputerId { get; set; }
-        public virtual int DepartementId { get; set; }
+        public virtual int DepartmentId { get; set; }
         public virtual List<TrainingProgram> TrainingPrograms { get; set;}
     }
 }
