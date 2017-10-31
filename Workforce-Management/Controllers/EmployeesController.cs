@@ -33,12 +33,34 @@ namespace Workforce_Management.Controllers
             }
             return View(employee);
         }
+               
+
+       
 
         // GET: Employees/Create
         public ActionResult Create()
         {
+
+            DepartmentsDropDownList();
+            ComputersDropDownList();
+
             return View();
         }
+
+
+        private void DepartmentsDropDownList(object selectedDepartment = null)
+        {
+          
+            ViewBag.DepartmentID = new SelectList(db.Departement.OrderBy(d => d.DepartementId), "DepartementId", "DepartementName", selectedDepartment);
+        }
+
+
+        private void ComputersDropDownList(object selectedComputer = null)
+        {
+
+            ViewBag.ComputerID = new SelectList(db.Computer.Where(c => c.Avaliable).OrderBy(o => o.ComputerId), "ComputerId", "ComputerName", selectedComputer);
+        }
+
 
         // POST: Employees/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -49,9 +71,18 @@ namespace Workforce_Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Employee.Add(employee);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+
+                try
+                {
+                    db.Employee.Add(employee);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (System.Exception)
+                {
+
+                    ViewBag.error = true;
+                }
             }
 
             return View(employee);

@@ -13,8 +13,8 @@ namespace Workforce_Management.Models
         public string EmployeeFirstName { get; set; }
         [Display(Name = "Employee Last Name")]
         public string EmployeeLastName { get; set; }
-        [Display(Name = "Hiring Date")]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime HiringDate { get; set; }
         public virtual int ComputerId { get; set; }
         public virtual int DepartmentId { get; set; }

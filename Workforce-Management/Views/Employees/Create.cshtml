@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HiringDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HiringDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.HiringDate , "{0:yyyy-MM-dd}", new { htmlAttributes = new { @class = "form-control" , @type = "date" } })
                 @Html.ValidationMessageFor(model => model.HiringDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,18 +42,26 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ComputerId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ComputerId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.ComputerId, (IEnumerable<SelectListItem>)ViewBag.ComputerID)
                 @Html.ValidationMessageFor(model => model.ComputerId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2" for="DepartementId">Department</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DepartmentId, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        @if (ViewBag.error != null)
+        {
+            <div class="alert" role="alert">
+                <strong>Error create Employee !</strong>
+            </div>
+        }
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
