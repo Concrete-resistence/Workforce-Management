@@ -159,9 +159,11 @@
     <Compile Include="Migrations\201710170037412_First.cs" />
     <Compile Include="Migrations\201710170037412_First.Designer.cs">
       <DependentUpon>201710170037412_First.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201710290138560_initial.cs" />
     <Compile Include="Migrations\201710290138560_initial.Designer.cs">
       <DependentUpon>201710290138560_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.cs" />
     <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.Designer.cs">
       <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
