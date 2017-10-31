@@ -7,13 +7,13 @@ namespace Workforce_Management.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DateTimeFixAttempt1 : IMigrationMetadata
+    public sealed partial class fixedModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DateTimeFixAttempt1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fixedModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710240224045_DateTimeFixAttempt1"; }
+            get { return "201710302359482_fixedModels"; }
         }
         
         string IMigrationMetadata.Source

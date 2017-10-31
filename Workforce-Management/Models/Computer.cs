@@ -14,6 +14,7 @@ namespace Workforce_Management.Models
         [Display(Name = "Manufacturer")]
         public string ComputerManufacturer { get; set; }
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name ="Purchase Date")]
         public DateTime PurchaseDate { get; set; }
         public bool Avaliable { get; set; }

@@ -150,24 +150,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComputersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TrainingProgramsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.cs" />
-    <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.Designer.cs">
-      <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.cs" />
-    <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.Designer.cs">
-      <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710240224045_DateTimeFixAttempt1.cs" />
-    <Compile Include="Migrations\201710240224045_DateTimeFixAttempt1.Designer.cs">
-      <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
+    <Compile Include="Migrations\201710302359482_fixedModels.cs" />
+    <Compile Include="Migrations\201710302359482_fixedModels.Designer.cs">
+      <DependentUpon>201710302359482_fixedModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Computer.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\TrainingProgram.cs" />
     <Compile Include="Models\WorkforceManagmentContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -248,14 +242,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710270047325_addedBoolForAvaliable.resx">
-      <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710200108480_AddingToTrainingPrograms.resx">
-      <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710240224045_DateTimeFixAttempt1.resx">
-      <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710302359482_fixedModels.resx">
+      <DependentUpon>201710302359482_fixedModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
