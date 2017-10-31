@@ -148,15 +148,42 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ComputersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TrainingProgramsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710170037412_First.cs" />
+    <Compile Include="Migrations\201710170037412_First.Designer.cs">
+      <DependentUpon>201710170037412_First.cs</DependentUpon>
+    <Compile Include="Migrations\201710290138560_initial.cs" />
+    <Compile Include="Migrations\201710290138560_initial.Designer.cs">
+      <DependentUpon>201710290138560_initial.cs</DependentUpon>
     <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.cs" />
     <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.Designer.cs">
       <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710302304424_ChangeEmployee.cs" />
+    <Compile Include="Migrations\201710302304424_ChangeEmployee.Designer.cs">
+      <DependentUpon>201710302304424_ChangeEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710302312154_ChangeEmployee2.cs" />
+    <Compile Include="Migrations\201710302312154_ChangeEmployee2.Designer.cs">
+      <DependentUpon>201710302312154_ChangeEmployee2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710302319385_ChangeEmployee3.cs" />
+    <Compile Include="Migrations\201710302319385_ChangeEmployee3.Designer.cs">
+      <DependentUpon>201710302319385_ChangeEmployee3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710302351094_ChangeTables.cs" />
+    <Compile Include="Migrations\201710302351094_ChangeTables.Designer.cs">
+      <DependentUpon>201710302351094_ChangeTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710310001353_ChangeDepartmentTable.cs" />
+    <Compile Include="Migrations\201710310001353_ChangeDepartmentTable.Designer.cs">
+      <DependentUpon>201710310001353_ChangeDepartmentTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.cs" />
     <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.Designer.cs">
@@ -168,6 +195,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Computer.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\WorkforceManagmentContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -208,6 +236,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Computers\Create.cshtml" />
     <Content Include="Views\Computers\Delete.cshtml" />
     <Content Include="Views\Computers\Details.cshtml" />
@@ -231,6 +264,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Incude\" />
+    <Folder Include="Workforce_Management\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -248,14 +283,35 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710170037412_First.resx">
+      <DependentUpon>201710170037412_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710290138560_initial.resx">
+      <DependentUpon>201710290138560_initial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710270047325_addedBoolForAvaliable.resx">
       <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710302304424_ChangeEmployee.resx">
+      <DependentUpon>201710302304424_ChangeEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710200108480_AddingToTrainingPrograms.resx">
       <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710302312154_ChangeEmployee2.resx">
+      <DependentUpon>201710302312154_ChangeEmployee2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710240224045_DateTimeFixAttempt1.resx">
       <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710302319385_ChangeEmployee3.resx">
+      <DependentUpon>201710302319385_ChangeEmployee3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710302351094_ChangeTables.resx">
+      <DependentUpon>201710302351094_ChangeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710310001353_ChangeDepartmentTable.resx">
+      <DependentUpon>201710310001353_ChangeDepartmentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

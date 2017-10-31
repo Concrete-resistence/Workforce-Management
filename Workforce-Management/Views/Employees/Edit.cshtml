@@ -1,4 +1,5 @@
 ﻿@model Workforce_Management.Models.Employee
+@using Workforce_Management.Models
 
 @{
     ViewBag.Title = "Edit";
@@ -18,15 +19,16 @@
         @Html.HiddenFor(model => model.EmployeeId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeFirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EmployeeFirstName,"First Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                
                 @Html.EditorFor(model => model.EmployeeFirstName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EmployeeFirstName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeLastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EmployeeLastName,"Last Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EmployeeLastName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EmployeeLastName, "", new { @class = "text-danger" })
@@ -34,35 +36,66 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.HiringDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.HiringDate,"Hiring Date",htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HiringDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.HiringDate.ToString("MM-dd-yyyy"), new { htmlattributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.HiringDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ComputerId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ComputerId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ComputerId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <table class="table">
+            <tr >
+                <td > @Html.LabelFor(model => model.ComputerId ,"Computer Name" ,htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td class="col-md-10"> 
+                    @Html.DropDownListFor(model => model.ComputerId,
+                    new SelectList(ViewBag.AvailableComputers, "ComputerId", "ComputerName") , "Select Computer Name" )                      
+                </td>
+            </tr>
+          </table>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DepartementId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DepartementId, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DepartementId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <table>
+            <tr>
+                <td> @Html.LabelFor(model => model.DepartmentId ,"Department",htmlAttributes: new { @class = "control-label col-md-2"})</td>
+                <td class="col-md-8">
+                    @Html.DropDownListFor(model=> model.DepartmentId,
+                     new SelectList (ViewBag.AvailableDepartments,"DepartmentId","DepartmentName"),"Select the new Department")
+                </td>
+            </tr>
+        </table>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <table class="table">
+                <tr>
+                    <th>
+                        Training Program
+                    </th>
+                </tr>
+                @foreach (TrainingProgram item in ViewBag.AvailableCourses)
+                {
+                    <tr>
+                        <td>
+                            @item.TrainingProgramName
+
+                        <td>
+                            @if (item.Employee.Any(e => e.EmployeeId == Model.EmployeeId))
+                            {
+                                @Html.ActionLink("Remove", "RemoveCourse", new { courseId = item.TrainingProgramId, empId = Model.EmployeeId })
+                            }
+
+                            else
+                            {
+                                @Html.ActionLink("Add", "AddCourse", new { courseId = item.TrainingProgramId, empId = Model.EmployeeId })
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
             </div>
-        </div>
-    </div>
+</div>
 }
 
 <div>
