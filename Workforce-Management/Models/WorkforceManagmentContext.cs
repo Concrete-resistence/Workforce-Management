@@ -13,7 +13,7 @@ namespace Workforce_Management.Models
         }
         public System.Data.Entity.DbSet<Workforce_Management.Models.Computer>Computer { get; set; }
 
-        public System.Data.Entity.DbSet<Workforce_Management.Models.Department> Department { get; set; }
+        public System.Data.Entity.DbSet<Workforce_Management.Models.Department> Departments { get; set; }
         public System.Data.Entity.DbSet<Workforce_Management.Models.Employee> Employee { get; set; }
         public System.Data.Entity.DbSet<Workforce_Management.Models.TrainingProgram> TrainingProgram { get; set; }
     }

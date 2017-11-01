@@ -191,6 +191,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -210,11 +213,6 @@
     <Content Include="Views\Departments\Details.cshtml" />
     <Content Include="Views\Departments\Edit.cshtml" />
     <Content Include="Views\Departments\Index.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Computers\Create.cshtml" />
     <Content Include="Views\Computers\Delete.cshtml" />
     <Content Include="Views\Computers\Details.cshtml" />
@@ -225,16 +223,8 @@
     <Content Include="Views\TrainingPrograms\Edit.cshtml" />
     <Content Include="Views\TrainingPrograms\Delete.cshtml" />
     <Content Include="Views\TrainingPrograms\Details.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Views\Departements\Create.cshtml" />
-    <Content Include="Views\Departements\Delete.cshtml" />
-    <Content Include="Views\Departements\Details.cshtml" />
-    <Content Include="Views\Departements\Edit.cshtml" />
-    <Content Include="Views\Departements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
