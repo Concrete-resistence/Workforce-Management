@@ -100,7 +100,7 @@ namespace Workforce_Management.Controllers
                 return HttpNotFound();
             }
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
-            ViewBag.AvailableDepartements = db.Departments.ToList();
+            ViewBag.AvailableDepartments = db.Departments.ToList();
             ViewBag.AvailableComputers = db.Computer
                 .Where(C => C.Avaliable == true)
                 .ToList();
