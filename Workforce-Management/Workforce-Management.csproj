@@ -226,6 +226,11 @@
     <Content Include="Views\TrainingPrograms\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Departements\Create.cshtml" />
+    <Content Include="Views\Departements\Delete.cshtml" />
+    <Content Include="Views\Departements\Details.cshtml" />
+    <Content Include="Views\Departements\Edit.cshtml" />
+    <Content Include="Views\Departements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
