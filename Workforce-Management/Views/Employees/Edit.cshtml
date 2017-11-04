@@ -45,7 +45,7 @@
 
         <table class="table">
             <tr >
-                <td > @Html.LabelFor(model => model.ComputerId ,"Computer Name" ,htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td > @Html.LabelFor(model => model.ComputerId ,"Computer" ,htmlAttributes: new { @class = "control-label col-md-2" })</td>
                 <td class="col-md-10"> 
                     @Html.DropDownListFor(model => model.ComputerId,
                     new SelectList(ViewBag.AvailableComputers, "ComputerId", "ComputerName"))                      
