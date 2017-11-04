@@ -7,13 +7,13 @@ namespace Workforce_Management.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangeEmployee3 : IMigrationMetadata
+    public sealed partial class NewStartingPoint : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeEmployee3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewStartingPoint));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710302319385_ChangeEmployee3"; }
+            get { return "201711010051310_NewStartingPoint"; }
         }
         
         string IMigrationMetadata.Source

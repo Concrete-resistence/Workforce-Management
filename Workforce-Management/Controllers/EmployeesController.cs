@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Workforce_Management.Models;
-using System.Data.Entity;
 
 namespace Workforce_Management.Controllers
 {
@@ -50,8 +49,8 @@ namespace Workforce_Management.Controllers
 
         private void DepartmentsDropDownList(object selectedDepartment = null)
         {
-          
-            ViewBag.DepartmentID = new SelectList(db.Departement.OrderBy(d => d.DepartementId), "DepartementId", "DepartementName", selectedDepartment);
+
+            ViewBag.DepartmentID = new SelectList(db.Department.OrderBy(d => d.DepartmentId), "DepartmentId", "DepartmentName", selectedDepartment);
         }
 
 
@@ -62,12 +61,13 @@ namespace Workforce_Management.Controllers
         }
 
 
+
         // POST: Employees/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeId,EmployeeFirstName,EmployeeLastName,HiringDate,ComputerId,DepartementId")] Employee employee)
+        public ActionResult Create([Bind(Include = "EmployeeId,EmployeeFirstName,EmployeeLastName,HiringDate,ComputerId,DepartmentId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -75,6 +75,7 @@ namespace Workforce_Management.Controllers
                 try
                 {
                     db.Employee.Add(employee);
+                    db.Computer.Find(employee.ComputerId).Avaliable = false;
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -101,7 +102,7 @@ namespace Workforce_Management.Controllers
                 return HttpNotFound();
             }
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
-            ViewBag.AvailableDepartements = db.Departement.ToList();
+            ViewBag.AvailableDepartments = db.Department.ToList();
             ViewBag.AvailableComputers = db.Computer
                 .Where(C => C.Avaliable == true)
                 .ToList();
@@ -114,7 +115,7 @@ namespace Workforce_Management.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeId,EmployeeFirstName,EmployeeLastName,HiringDate,ComputerId,DepartementId,TrainingPrograms.TrainingProgramId")] Employee employee)
+        public ActionResult Edit([Bind(Include = "EmployeeId,EmployeeFirstName,EmployeeLastName,HiringDate,ComputerId,DepartmentId,TrainingPrograms.TrainingProgramId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -135,7 +136,7 @@ namespace Workforce_Management.Controllers
             }
             //(new System.Collections.Generic.Mscorlib_CollectionDebugView<Workforce_Management.Models.Employee>(db.Employee.Local).Items[0]).ComputerId
             ViewBag.AvailableCourses = db.TrainingProgram.ToList();
-            ViewBag.AvailableDepartements = db.Departement.ToList();
+            ViewBag.AvailableDepartments = db.Department.ToList();
             ViewBag.AvailableComputers = db.Computer
                                         .Where(C => C.Avaliable == true).ToList();
             return View(employee);
@@ -152,7 +153,7 @@ namespace Workforce_Management.Controllers
             db.SaveChanges();
             Employee employee = db.Employee.Find(empId);
             ViewBag.AvailableComputers = db.Computer.ToList();
-            ViewBag.AvailableDepartements = db.Departement.ToList();
+            ViewBag.AvailableDepartments = db.Department.ToList();
             ViewBag.AvailableComputers = db.Computer
                                         .Where(C => C.Avaliable == true).ToList();
             return View("Edit", employee);
@@ -169,7 +170,7 @@ namespace Workforce_Management.Controllers
 
             db.SaveChanges();
             Employee employee = db.Employee.Find(empid);
-            ViewBag.AvailableDepartements = db.Departement.ToList();
+            ViewBag.AvailableDepartments = db.Department.ToList();
             ViewBag.AvailableComputers = db.Computer
                            .Where(C => C.Avaliable == true).ToList();
             return View("edit", employee);

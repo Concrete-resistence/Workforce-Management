@@ -38,17 +38,17 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HiringDate,"Hiring Date",htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HiringDate.ToString("MM-dd-yyyy"), new { htmlattributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.HiringDate, new { htmlattributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.HiringDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <table class="table">
             <tr >
-                <td > @Html.LabelFor(model => model.ComputerId ,"Computer Name" ,htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                <td > @Html.LabelFor(model => model.ComputerId ,"Computer" ,htmlAttributes: new { @class = "control-label col-md-2" })</td>
                 <td class="col-md-10"> 
                     @Html.DropDownListFor(model => model.ComputerId,
-                    new SelectList(ViewBag.AvailableComputers, "ComputerId", "ComputerName") , "Select Computer Name" )                      
+                    new SelectList(ViewBag.AvailableComputers, "ComputerId", "ComputerName"))                      
                 </td>
             </tr>
           </table>
@@ -58,7 +58,7 @@
                 <td> @Html.LabelFor(model => model.DepartmentId ,"Department",htmlAttributes: new { @class = "control-label col-md-2"})</td>
                 <td class="col-md-8">
                     @Html.DropDownListFor(model=> model.DepartmentId,
-                     new SelectList (ViewBag.AvailableDepartments,"DepartmentId","DepartmentName"),"Select the new Department")
+                     new SelectList (ViewBag.AvailableDepartments,"DepartmentId","DepartmentName"))
                 </td>
             </tr>
         </table>

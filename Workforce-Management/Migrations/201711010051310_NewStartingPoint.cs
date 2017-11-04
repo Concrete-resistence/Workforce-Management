@@ -3,7 +3,7 @@ namespace Workforce_Management.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class NewStartingPoint : DbMigration
     {
         public override void Up()
         {
@@ -28,13 +28,13 @@ namespace Workforce_Management.Migrations
                         EmployeeLastName = c.String(),
                         HiringDate = c.DateTime(nullable: false),
                         ComputerId = c.Int(nullable: false),
-                        DepartementId = c.Int(nullable: false),
+                        DepartmentId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.EmployeeId)
                 .ForeignKey("dbo.Computers", t => t.ComputerId, cascadeDelete: true)
-                .ForeignKey("dbo.Departements", t => t.DepartementId, cascadeDelete: true)
+                .ForeignKey("dbo.Departments", t => t.DepartmentId, cascadeDelete: true)
                 .Index(t => t.ComputerId)
-                .Index(t => t.DepartementId);
+                .Index(t => t.DepartmentId);
             
             CreateTable(
                 "dbo.TrainingPrograms",
@@ -50,13 +50,14 @@ namespace Workforce_Management.Migrations
                 .PrimaryKey(t => t.TrainingProgramId);
             
             CreateTable(
-                "dbo.Departements",
+                "dbo.Departments",
                 c => new
                     {
-                        DepartementId = c.Int(nullable: false, identity: true),
-                        DepartementName = c.String(),
+                        DepartmentId = c.Int(nullable: false, identity: true),
+                        DepartmentName = c.String(),
+                        DepartmentDetails = c.String(),
                     })
-                .PrimaryKey(t => t.DepartementId);
+                .PrimaryKey(t => t.DepartmentId);
             
             CreateTable(
                 "dbo.TrainingProgramEmployees",
@@ -75,16 +76,16 @@ namespace Workforce_Management.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Employees", "DepartementId", "dbo.Departements");
+            DropForeignKey("dbo.Employees", "DepartmentId", "dbo.Departments");
             DropForeignKey("dbo.Employees", "ComputerId", "dbo.Computers");
             DropForeignKey("dbo.TrainingProgramEmployees", "Employee_EmployeeId", "dbo.Employees");
             DropForeignKey("dbo.TrainingProgramEmployees", "TrainingProgram_TrainingProgramId", "dbo.TrainingPrograms");
             DropIndex("dbo.TrainingProgramEmployees", new[] { "Employee_EmployeeId" });
             DropIndex("dbo.TrainingProgramEmployees", new[] { "TrainingProgram_TrainingProgramId" });
-            DropIndex("dbo.Employees", new[] { "DepartementId" });
+            DropIndex("dbo.Employees", new[] { "DepartmentId" });
             DropIndex("dbo.Employees", new[] { "ComputerId" });
             DropTable("dbo.TrainingProgramEmployees");
-            DropTable("dbo.Departements");
+            DropTable("dbo.Departments");
             DropTable("dbo.TrainingPrograms");
             DropTable("dbo.Employees");
             DropTable("dbo.Computers");

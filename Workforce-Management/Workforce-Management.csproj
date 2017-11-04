@@ -156,69 +156,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710170037412_First.cs" />
-    <Compile Include="Migrations\201710170037412_First.Designer.cs">
-      <DependentUpon>201710170037412_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710290138560_initial.cs" />
-    <Compile Include="Migrations\201710290138560_initial.Designer.cs">
-      <DependentUpon>201710290138560_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.cs" />
-    <Compile Include="Migrations\201710270047325_addedBoolForAvaliable.Designer.cs">
-      <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710302304424_ChangeEmployee.cs" />
-    <Compile Include="Migrations\201710302304424_ChangeEmployee.Designer.cs">
-      <DependentUpon>201710302304424_ChangeEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710302312154_ChangeEmployee2.cs" />
-    <Compile Include="Migrations\201710302312154_ChangeEmployee2.Designer.cs">
-      <DependentUpon>201710302312154_ChangeEmployee2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710302319385_ChangeEmployee3.cs" />
-    <Compile Include="Migrations\201710302319385_ChangeEmployee3.Designer.cs">
-      <DependentUpon>201710302319385_ChangeEmployee3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710302351094_ChangeTables.cs" />
-    <Compile Include="Migrations\201710302351094_ChangeTables.Designer.cs">
-      <DependentUpon>201710302351094_ChangeTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710310001353_ChangeDepartmentTable.cs" />
-    <Compile Include="Migrations\201710310001353_ChangeDepartmentTable.Designer.cs">
-      <DependentUpon>201710310001353_ChangeDepartmentTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.cs" />
-    <Compile Include="Migrations\201710200108480_AddingToTrainingPrograms.Designer.cs">
-      <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710240224045_DateTimeFixAttempt1.cs" />
-    <Compile Include="Migrations\201710240224045_DateTimeFixAttempt1.Designer.cs">
-      <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710180103146_renamedepartmentid.cs" />
-    <Compile Include="Migrations\201710180103146_renamedepartmentid.Designer.cs">
-      <DependentUpon>201710180103146_renamedepartmentid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710180152293_addeddepartmentdeatails.cs" />
-    <Compile Include="Migrations\201710180152293_addeddepartmentdeatails.Designer.cs">
-      <DependentUpon>201710180152293_addeddepartmentdeatails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710180155003_add-migration fixed spelling.cs" />
-    <Compile Include="Migrations\201710180155003_add-migration fixed spelling.Designer.cs">
-      <DependentUpon>201710180155003_add-migration fixed spelling.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710200016386_fuckVS.cs" />
-    <Compile Include="Migrations\201710200016386_fuckVS.Designer.cs">
-      <DependentUpon>201710200016386_fuckVS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710200034587_addedstuff.cs" />
-    <Compile Include="Migrations\201710200034587_addedstuff.Designer.cs">
-      <DependentUpon>201710200034587_addedstuff.cs</DependentUpon>
+    <Compile Include="Migrations\201711010051310_NewStartingPoint.cs" />
+    <Compile Include="Migrations\201711010051310_NewStartingPoint.Designer.cs">
+      <DependentUpon>201711010051310_NewStartingPoint.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\TrainingProgram.cs" />
     <Compile Include="Models\WorkforceManagmentContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -245,6 +191,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -264,11 +213,6 @@
     <Content Include="Views\Departments\Details.cshtml" />
     <Content Include="Views\Departments\Edit.cshtml" />
     <Content Include="Views\Departments\Index.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Computers\Create.cshtml" />
     <Content Include="Views\Computers\Delete.cshtml" />
     <Content Include="Views\Computers\Details.cshtml" />
@@ -279,16 +223,8 @@
     <Content Include="Views\TrainingPrograms\Edit.cshtml" />
     <Content Include="Views\TrainingPrograms\Delete.cshtml" />
     <Content Include="Views\TrainingPrograms\Details.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Views\Departements\Create.cshtml" />
-    <Content Include="Views\Departements\Delete.cshtml" />
-    <Content Include="Views\Departements\Details.cshtml" />
-    <Content Include="Views\Departements\Edit.cshtml" />
-    <Content Include="Views\Departements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -311,51 +247,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710170037412_First.resx">
-      <DependentUpon>201710170037412_First.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710290138560_initial.resx">
-      <DependentUpon>201710290138560_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710270047325_addedBoolForAvaliable.resx">
-      <DependentUpon>201710270047325_addedBoolForAvaliable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710180103146_renamedepartmentid.resx">
-      <DependentUpon>201710180103146_renamedepartmentid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710302304424_ChangeEmployee.resx">
-      <DependentUpon>201710302304424_ChangeEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710200108480_AddingToTrainingPrograms.resx">
-      <DependentUpon>201710200108480_AddingToTrainingPrograms.cs</DependentUpon>
-    </EmbeddedResource>
-
-    <EmbeddedResource Include="Migrations\201710180152293_addeddepartmentdeatails.resx">
-      <DependentUpon>201710180152293_addeddepartmentdeatails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710302312154_ChangeEmployee2.resx">
-      <DependentUpon>201710302312154_ChangeEmployee2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710240224045_DateTimeFixAttempt1.resx">
-      <DependentUpon>201710240224045_DateTimeFixAttempt1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710180155003_add-migration fixed spelling.resx">
-      <DependentUpon>201710180155003_add-migration fixed spelling.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710302319385_ChangeEmployee3.resx">
-      <DependentUpon>201710302319385_ChangeEmployee3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710200016386_fuckVS.resx">
-      <DependentUpon>201710200016386_fuckVS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710302351094_ChangeTables.resx">
-      <DependentUpon>201710302351094_ChangeTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710200034587_addedstuff.resx">
-      <DependentUpon>201710200034587_addedstuff.cs</DependentUpon>
-   </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710310001353_ChangeDepartmentTable.resx">
-      <DependentUpon>201710310001353_ChangeDepartmentTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711010051310_NewStartingPoint.resx">
+      <DependentUpon>201711010051310_NewStartingPoint.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
