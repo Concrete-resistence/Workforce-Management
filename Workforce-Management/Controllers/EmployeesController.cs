@@ -156,7 +156,7 @@ namespace Workforce_Management.Controllers
             ViewBag.AvailableDepartments = db.Department.ToList();
             ViewBag.AvailableComputers = db.Computer
                                         .Where(C => C.Avaliable == true).ToList();
-            return View("Edit", employee);
+            return RedirectToAction("Edit", new { id = employee.EmployeeId });
         }
 
 
@@ -173,7 +173,7 @@ namespace Workforce_Management.Controllers
             ViewBag.AvailableDepartments = db.Department.ToList();
             ViewBag.AvailableComputers = db.Computer
                            .Where(C => C.Avaliable == true).ToList();
-            return View("edit", employee);
+            return RedirectToAction("Edit", new { id = employee.EmployeeId });
         }
 
 
